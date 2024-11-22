@@ -1,4 +1,5 @@
 Support
+
 For assistance or questions about the app, please contact us at:
 📧 pieternatanael@icloud.com
 
