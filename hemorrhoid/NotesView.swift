@@ -95,7 +95,7 @@ struct NotesView: View {
     var body: some View {
         ZStack {
             // Background Color Gradient
-            LinearGradient(colors: [Color(#colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)), .clear], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [Color(#colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)), .clear], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             VStack {
                 HStack {
@@ -112,7 +112,7 @@ struct NotesView: View {
                 }
                
                 HStack {
-                    Text("Medication Notes")
+                    Text("Notes")
                         .font(.largeTitle.bold())
                         .foregroundColor(.white)
                         .padding()
@@ -140,11 +140,11 @@ struct NotesView: View {
                                 }) {
                                     Image(systemName: "trash")
                                         .font(.title3.bold())
-                                        .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
+                                        .foregroundColor(Color(#colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)))
                                 }
                                 .buttonStyle(BorderlessButtonStyle())
                             }
-                            .foregroundColor(worry.realized ? Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)) : .primary)
+                            .foregroundColor(worry.realized ? Color(#colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)) : .primary)
                         }
                     }
                     .onDelete(perform: deleteWorry)
@@ -158,7 +158,7 @@ struct NotesView: View {
                     Text("Save Notes")
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color(#colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)))
+                        .background(Color(#colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)))
                         .foregroundColor(.white)
                         .font(.title3.bold())
                         .cornerRadius(10)
@@ -272,14 +272,14 @@ struct AdsAndAppFunctionalityView: View {
 //                        AppCardView(imageName: "timetell", appName: "TimeTell", appDescription: "Announce the time every 30 seconds, no more guessing and checking your watch, for time-sensitive tasks.", appURL: "https://apps.apple.com/id/app/loopspeak/id6473384030")
                         Divider().background(Color.gray)
 
-                        CardView(imageName: "SingLoop", appName: "Sing LOOP", appDescription: "Record your voice effortlessly, and play it back in a loop.", appURL: "https://apps.apple.com/id/app/sing-l00p/id6480459464")
-                        Divider().background(Color.gray)
+//                        CardView(imageName: "SingLoop", appName: "Sing LOOP", appDescription: "Record your voice effortlessly, and play it back in a loop.", appURL: "https://apps.apple.com/id/app/sing-l00p/id6480459464")
+//                        Divider().background(Color.gray)
 
                         CardView(imageName: "loopspeak", appName: "LOOPSpeak", appDescription: "Type or paste your text, play in loop, and enjoy hands-free narration.", appURL: "https://apps.apple.com/id/app/loopspeak/id6473384030")
                         Divider().background(Color.gray)
 
-//                        AppCardView(imageName: "insomnia", appName: "Insomnia Sheep", appDescription: "Design to ease your mind and help you relax leading up to sleep.", appURL: "https://apps.apple.com/id/app/insomnia-sheep/id6479727431")
-//                        Divider().background(Color.gray)
+                        CardView(imageName: "insomnia", appName: "Insomnia Sheep", appDescription: "The Ultimate Sleep App.", appURL: "https://apps.apple.com/id/app/insomnia-sheep/id6479727431")
+                        Divider().background(Color.gray)
 
 
                         CardView(imageName: "iprogram", appName: "iProgramMe", appDescription: "Custom affirmations, schedule notifications, stay inspired daily.", appURL: "https://apps.apple.com/id/app/iprogramme/id6470770935")
@@ -313,7 +313,7 @@ struct AdsAndAppFunctionalityView: View {
                 Spacer()
 
                 HStack {
-                    Text("Take Medication is developed by Three Dollar.")
+                    Text("Hemorrhoid is developed by Three Dollar.")
                         .font(.title3.bold())
                     Spacer()
                 }
@@ -324,7 +324,7 @@ struct AdsAndAppFunctionalityView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
-                .background(Color.blue)
+                .background(Color(#colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)))
                 .foregroundColor(.white)
                 .font(.title3.bold())
                 .cornerRadius(10)

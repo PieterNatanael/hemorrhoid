@@ -15,19 +15,21 @@ struct MainAppView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             
-            RecordView()
+            ContentView()
                 .tabItem {
-                    Image(systemName: "record.circle.fill")
-                    Text("Tracking")
+                    Image(systemName: "move.3d")
+                    Text("Smart Moves")
                 }
                 .tag(0)
             
-            ContentView()
+            RecordView()
                 .tabItem {
-                    Image(systemName: "pills.fill")
-                    Text("Take Medication")
+                    Image(systemName: "record.circle.fill")
+                    Text("Sitz Bath")
                 }
                 .tag(1)
+            
+           
             
            NotesView()
                 .tabItem {
@@ -43,6 +45,6 @@ struct MainAppView: View {
 //                }
 //                .tag(2)
         }
-        .accentColor(Color(#colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)))
+        .accentColor(Color(#colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)))
     }
 }

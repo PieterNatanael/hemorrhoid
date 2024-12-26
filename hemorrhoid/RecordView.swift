@@ -23,7 +23,7 @@ struct RecordView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [Color(#colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)), .clear], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [Color(#colorLiteral(red: 0.5807225108, green: 0.066734083, blue: 0, alpha: 1)), .clear], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             VStack {
                 // Summary Section
@@ -42,7 +42,7 @@ struct RecordView: View {
     
     private var summarySection: some View {
         VStack {
-            Text("Medication Tracking")
+            Text("Sitz Bath Tracking")
                 .font(.headline)
                 .foregroundColor(.white)
             
@@ -77,21 +77,21 @@ struct RecordView: View {
                 
                 // Content with a visible divider
                 HStack(spacing: 0) {
-                    Text("")
+                    Text("Sitz Bath")
                         .bold()
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .foregroundColor(.gray)
-
-                    Rectangle()
-                        .fill(Color.gray.opacity(1))
-                        .frame(width: 1.5, height: 40) // Visual divider
-
-                    Text("")
-                        .bold()
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
+//
+//                    Rectangle()
+//                        .fill(Color.gray.opacity(1))
+//                        .frame(width: 1.5, height: 40) // Visual divider
+//
+//                    Text("")
+//                        .bold()
+//                        .frame(maxWidth: .infinity)
+//                        .padding()
+//                        .foregroundColor(.gray)
                 }
             }
             .frame(width: 160, height: 60) // Fixed shorter width and height

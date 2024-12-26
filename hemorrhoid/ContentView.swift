@@ -60,6 +60,9 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
+            ZStack {     // Background Color Gradient
+                LinearGradient(colors: [.clear, .clear], startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
                 VStack(spacing: 20) {
                     Text("Smart Moves")
                         .font(.largeTitle)
@@ -76,11 +79,11 @@ struct ContentView: View {
                             .background(Color.yellow)
                             .cornerRadius(15)
                         if let expirationDate = subscriptionExpirationDate {
-                                              Text("Renews: \(expirationDate.formatted(.dateTime.day().month().year()))")
-                                                  .font(.caption)
-                                                  .foregroundColor(.gray)
-                                          }
-                                      }
+                            Text("Renews: \(expirationDate.formatted(.dateTime.day().month().year()))")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                        }
+                    }
                     
                     // Current Status
                     VStack(spacing: 8) {
@@ -104,28 +107,28 @@ struct ContentView: View {
                     
                     // Start/Stop Button - Always visible
                     Button(action: {
-                                  if isTimerActive {
-                                      // Always allow stopping
-                                      toggleTimer()
-                                  } else if isPremium || notificationsSentToday < maxFreeNotifications {
-                                      // Only check premium status when starting
-                                      toggleTimer()
-                                  } else {
-                                      showUpgradePrompt = true
-                                  }
-                              }) {
-                                  HStack {
-                                      Image(systemName: isTimerActive ? "stop.circle.fill" : "play.circle.fill")
-                                      Text(isTimerActive ? "Stop Reminders" : "Start Reminders")
-                                  }
-                                  .frame(maxWidth: .infinity)
-                                  .padding()
-                                  .foregroundColor(.white)
-                                  .background(isTimerActive ? Color.red : Color.green)
-                                  .cornerRadius(10)
-                              }
+                        if isTimerActive {
+                            // Always allow stopping
+                            toggleTimer()
+                        } else if isPremium || notificationsSentToday < maxFreeNotifications {
+                            // Only check premium status when starting
+                            toggleTimer()
+                        } else {
+                            showUpgradePrompt = true
+                        }
+                    }) {
+                        HStack {
+                            Image(systemName: isTimerActive ? "stop.circle.fill" : "play.circle.fill")
+                            Text(isTimerActive ? "Stop Reminders" : "Start Reminders")
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(isTimerActive ? Color.red : Color.green)
+                        .cornerRadius(10)
+                    }
                     
-            
+                    
                     
                     // Settings Button
                     Button(action: {
@@ -157,24 +160,24 @@ struct ContentView: View {
                         .cornerRadius(10)
                     }
                     
-                
+                    
                     if !isPremium {
-                                     Button(action: {
-                                         showUpgradePrompt = true
-                                     }) {
-                                         HStack {
-                                             Image(systemName: "star.fill")
-                                             Text("Upgrade to Premium")
-                                         }
-                                         .frame(maxWidth: .infinity)
-                                         .padding()
-                                         .foregroundColor(.white)
-                                         .background(Color.yellow)
-                                         .cornerRadius(10)
-                                     }
-                                 }
-                                 
-                                 
+                        Button(action: {
+                            showUpgradePrompt = true
+                        }) {
+                            HStack {
+                                Image(systemName: "star.fill")
+                                Text("Upgrade to Premium")
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(Color.yellow)
+                            .cornerRadius(10)
+                        }
+                    }
+                    
+                    
                     
                     // Restore Purchase Button
                     Button(action: restorePurchases) {
@@ -206,27 +209,28 @@ struct ContentView: View {
                     SettingsView(selectedInterval: $selectedInterval, isPremium: isPremium)
                 }
                 .alert("Hemorrhoid Premium", isPresented: $showUpgradePrompt) {
-                       Button("Privacy policy and terms of use") {
-                           showUpgradePrompt = false
-                           showSubscriptionInfo = true
-                       }
-                       Button("Subscribe Now", action: purchasePremium)
-                       Button("Restore Subscription", action: restorePurchases)
-                       Button("Not Now", role: .cancel) {}
-                   } message: {
-                       Text("Get unlimited sessions with our yearly subscription for \(storeKitManager.localizedPrice). Subscription auto-renews unless cancelled.")
-                   }
-            
-            
+                    Button("Privacy policy and terms of use") {
+                        showUpgradePrompt = false
+                        showSubscriptionInfo = true
+                    }
+                    Button("Subscribe Now", action: purchasePremium)
+                    Button("Restore Subscription", action: restorePurchases)
+                    Button("Not Now", role: .cancel) {}
+                } message: {
+                    Text("Get unlimited sessions with our yearly subscription for \(storeKitManager.localizedPrice). Subscription auto-renews unless cancelled.")
+                }
+                
+                
                 .sheet(isPresented: $showSubscriptionInfo) {
                     SubscriptionInfoView()
                 }
-
+                
                 .onAppear {
                     requestNotificationPermission()
-                            checkSubscriptionStatus() // New function call
-                            resetDailyNotificationsIfNeeded()
+                    checkSubscriptionStatus() // New function call
+                    resetDailyNotificationsIfNeeded()
                 }
+            }
             }
         }
         
@@ -735,7 +739,7 @@ struct SettingsView: View {
 
 
 #Preview {
-    ContentView()
+    MainAppView()
 }
 
 
