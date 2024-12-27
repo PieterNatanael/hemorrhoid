@@ -69,6 +69,7 @@ struct ContentView: View {
                         .fontWeight(.bold)
                         .padding()
                     
+                    
                     // Premium Status Badge
                     if isPremium {
                         Text("Premium Subscriber")
