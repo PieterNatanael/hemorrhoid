@@ -20,14 +20,14 @@ struct MainAppView: View {
                     Image(systemName: "move.3d")
                     Text("Smart Moves")
                 }
-                .tag(0)
+                .tag(1)
             
             RecordView()
                 .tabItem {
                     Image(systemName: "record.circle.fill")
                     Text("Sitz Bath")
                 }
-                .tag(1)
+                .tag(0)
             
            
             

@@ -64,7 +64,7 @@ struct ContentView: View {
                 LinearGradient(colors: [.clear, .clear], startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
                 VStack(spacing: 20) {
-                    Text("Smart Moves")
+                    Text("Hemorrhoid")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .padding()

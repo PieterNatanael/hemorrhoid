@@ -304,7 +304,6 @@ struct AdsAndAppFunctionalityView: View {
                 • Each notes in the list has a 'checkmark' button that users can tap to mark the notes as resolved.
                 • Users can delete notes by tapping the "trash" button next to each notes, with a confirmation dialog to ensure they want to delete it permanently.
                 • The app automatically calculates and displays the number of days since each notes was added.
-                •We do not collect data, so there's no need to worry
                 """)
                 .font(.title3)
                 .multilineTextAlignment(.leading)
